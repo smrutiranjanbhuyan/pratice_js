@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Navbar(props) {
+    
+    let[mode,setMode]=useState("")
+    let ChangeMode = () => {
+        if (mode === "") {
+            setMode("dark"); // Corrected: Invoke setMode with the new value
+        } else {
+            setMode("");
+        }
+    }
   return (
     <><nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
@@ -33,8 +42,8 @@ export default function Navbar(props) {
         </ul>
         
         <div className="form-check form-switch">
-  <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-  <label className="form-check-label" htmlFor="flexSwitchCheckDefault"></label>
+  <input className="form-check-input"onClick={ChangeMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+  <i className={`fa-solid fa-${mode==="dark"?"sun":"moon"}`}></i>
 </div>
       </div>
     </div>
