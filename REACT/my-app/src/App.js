@@ -5,7 +5,7 @@ import Navbar from './Sources/Navbar';
 function App() {
   return (
    <>
-   <Navbar  headName="Smruti"/>
+   <Navbar  headName="Smruti" mode="dark"/>
    </>
   );
 }
